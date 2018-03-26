@@ -41,7 +41,7 @@ io.sockets.on('connection', function (socket) {
         var new_room = ("" + Math.random()).substring(2, 7);
         rooms.push(new_room);
         data.room = new_room;
-        socket.emit('updatechat', 'SERVER', 'Sala pronta, convide alguem usando o ID:' + new_room);
+        socket.emit('updatechat', 'SERVER', 'Sala pronta, convide alguem usando o ID: ' + new_room);
         socket.emit('roomcreated', data);
     });
 
