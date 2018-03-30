@@ -16,7 +16,6 @@ app.controller('AppCtrl', function ($scope, socket) {
     user.date = new Date().getTime();
     user.image = 'http://dummyimage.com/250x250/000/fff&text=' + username.charAt(0).toUpperCase();
     $scope.users.push(user);
-    alert($scope.curtrentUser);
   });
 
   socket.on('roomcreated', function (data) {
