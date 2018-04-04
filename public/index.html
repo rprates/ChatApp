@@ -17,8 +17,16 @@
 		<hr>
 		<div class="row">
 			<div class="col-lg-8">
+				<h2 class="text-center ">Digite uma mensagem</h2>
+				<div class="input-group ">
+					<input id="data " type="text " ng-model="message " class="form-control " placeholder="Digite a mensagem aqui ">
+					<span class="input-group-btn ">
+						<button class="btn btn-primary " id="datasend " type="button " ng-click="doPost(message) " >Enviar!</button>
+					</span>
+				</div>
+				<br/><br/>
 				<div class="row" id="userList" style="display: block;">
-					<div ng-repeat="user in users" class="col-sm-12 ng-scope">
+					<div ng-repeat="user in users | reverse" class="col-sm-12 ng-scope">
 						<div class="row" ng-if="user">
 							<div class="col-xs-2" ng-class="{'col-xs-push-10' : (user.username == curtrentUser)}">
 								<img ng-src=" {{user.image}} " class="img-thumbnail img-responsive img-circle pull-left " ng-class-even="pull-right
@@ -33,13 +41,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<h2 class="text-center ">Digite uma mensagem?</h2>
-				<div class="input-group ">
-					<input id="data " type="text " ng-model="message " class="form-control " placeholder="Digite a mensagem aqui ">
-					<span class="input-group-btn ">
-						<button class="btn btn-primary " id="datasend " type="button " ng-click="doPost(message) ">Enviar!</button>
-					</span>
 				</div>
 				<div class="clearfix "></div>
 			</div>

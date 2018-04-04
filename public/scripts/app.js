@@ -16,6 +16,7 @@ app.controller('AppCtrl', function ($scope, socket) {
     user.date = new Date().getTime();
     user.image = 'http://dummyimage.com/250x250/000/fff&text=' + username.charAt(0).toUpperCase();
     $scope.users.push(user);
+    $scope.message = "";
   });
 
   socket.on('roomcreated', function (data) {
@@ -60,5 +61,11 @@ app.factory('socket', function ($rootScope) {
         });
       })
     }
+  };
+});
+
+app.filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
   };
 });
